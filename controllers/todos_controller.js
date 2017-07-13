@@ -7,7 +7,6 @@ mongoose.connect(url, {
 })
 mongoose.Promise = global.Promise
 
-
 // create a new TODO and console log the response
 function create (params) {
   var {name, description, completed} = params
@@ -21,9 +20,9 @@ function create (params) {
   newTodo.save(function (err, data) {
     if (err) throw err
   })
-  }
+}
 
-
+//console.log(Todo + 'im over here');
   // console log the list of all TODOs
 function list () {
   Todo.find({}, function (err, ToDoList) {

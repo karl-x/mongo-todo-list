@@ -4,8 +4,14 @@ const Schema = mongoose.Schema
 
 //  Create Schema
 const todoSchema = new Schema ({
-  name: String,
-  description: String,
+  name: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
   completed: String
 })
 

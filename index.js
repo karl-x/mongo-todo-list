@@ -3,6 +3,10 @@ const readline = require('readline')
 const rl = readline.createInterface(process.stdin, process.stdout)
 const prefix = '> '
 
+const mongoose = require('mongoose')
+const url = 'mongodb://localhost:27017/mongo-todo-list'
+
+
 // This helper function simply console logs all of the supported commands
 function displayHelp () {
   console.log('Please input one of the following commands')
@@ -41,6 +45,9 @@ rl.on('line', (line) => {
       break
     case 'destroy':
       todos.destroy(words[1])
+      break
+    case 'destroyAll':
+      todos.destroyAll()
       break
     case 'quit':
       rl.close()
